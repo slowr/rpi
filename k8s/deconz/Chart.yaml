@@ -1,0 +1,12 @@
+apiVersion: v2
+name: deconz
+description: Helm chart for deconz
+
+type: application
+
+version: 6.1.0
+
+dependencies:
+  - name: deconz
+    version: "6.1.0"
+    repository: "file://deconz-6.1.0.tgz"

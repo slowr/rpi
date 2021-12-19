@@ -1,0 +1,12 @@
+apiVersion: v2
+name: external-dns
+description: Helm chart for external-dns
+
+type: application
+
+version: 1.7.0
+
+dependencies:
+  - name: external-dns
+    version: "1.7.0"
+    repository: "file://external-dns-1.7.0.tgz"

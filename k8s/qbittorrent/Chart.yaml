@@ -1,0 +1,12 @@
+apiVersion: v2
+name: qbittorrent
+description: Helm chart for qbittorrent
+
+type: application
+
+version: 13.1.0
+
+dependencies:
+  - name: qbittorrent
+    version: "13.1.0"
+    repository: "file://qbittorrent-13.1.0.tgz"

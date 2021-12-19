@@ -1,0 +1,12 @@
+apiVersion: v2
+name: jellyfin
+description: Helm chart for jellyfin
+
+type: application
+
+version: 9.2.0
+
+dependencies:
+  - name: jellyfin
+    version: "9.2.0"
+    repository: "file://jellyfin-9.2.0.tgz"

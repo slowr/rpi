@@ -1,0 +1,12 @@
+apiVersion: v2
+name: pihole
+description: Helm chart for pihole
+
+type: application
+
+version: 2.5.3
+
+dependencies:
+  - name: pihole
+    version: "2.5.3"
+    repository: "file://pihole-2.5.3.tgz"

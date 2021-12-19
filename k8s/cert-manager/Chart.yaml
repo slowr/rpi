@@ -1,0 +1,12 @@
+apiVersion: v2
+name: cert-manager
+description: Helm chart for cert-manager
+
+type: application
+
+version: 1.5.3
+
+dependencies:
+  - name: cert-manager
+    version: "1.5.3"
+    repository: "file://cert-manager-v1.5.3.tgz"

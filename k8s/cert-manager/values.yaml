@@ -1,0 +1,77 @@
+clusterIssuer:
+  mail: jim.mavrommatis@gmail.com
+
+cert-manager:
+  global:
+    imagePullSecrets: [ ]
+    logLevel: 2
+
+  installCRDs: true
+
+  replicaCount: 1
+
+  image:
+    repository: quay.io/jetstack/cert-manager-controller
+    pullPolicy: IfNotPresent
+
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
+
+  serviceAccount:
+    create: true
+    annotations: {}
+    automountServiceAccountToken: true
+
+  securityContext:
+    enabled: true
+    fsGroup: 1001
+
+  prometheus:
+    enabled: false
+    servicemonitor:
+      enabled: true
+      prometheusInstance: default
+      targetPort: 9402
+      path: /metrics
+      interval: 60s
+      scrapeTimeout: 30s
+      labels: { }
+
+  webhook:
+    replicaCount: 1
+    timeoutSeconds: 10
+
+    securityContext:
+      runAsNonRoot: true
+
+    image:
+      repository: quay.io/jetstack/cert-manager-webhook
+      pullPolicy: IfNotPresent
+
+
+  cainjector:
+    enabled: true
+    replicaCount: 1
+
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+
+    image:
+      repository: quay.io/jetstack/cert-manager-cainjector
+      pullPolicy: IfNotPresent
+
+  startupapicheck:
+    enabled: true
+
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+
+    image:
+      repository: quay.io/jetstack/cert-manager-ctl
+      pullPolicy: IfNotPresent

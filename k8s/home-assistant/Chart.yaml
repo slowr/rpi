@@ -1,0 +1,12 @@
+apiVersion: v2
+name: home-assistant
+description: Helm chart for home-assistant
+
+type: application
+
+version: 11.2.1
+
+dependencies:
+  - name: home-assistant
+    version: "11.2.1"
+    repository: "file://home-assistant-11.2.1.tgz"

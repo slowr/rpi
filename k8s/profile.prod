@@ -1,0 +1,2 @@
+export SOPS_AGE_KEY_FILE=/home/mavromat/.age-key
+export SOPS_AGE_RECIPIENTS=age1kzdrwhr2s5rcgp50kwk29kmtmqamrd66tst8fly6hnq0y4yq395smdz4yn
