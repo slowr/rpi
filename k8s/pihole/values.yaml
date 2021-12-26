@@ -29,7 +29,7 @@ pihole:
 
   dnsHostPort:
     # -- set this to true to enable dnsHostPort
-    enabled: true
+    enabled: false
     # -- default port for this pod
     port: 53
 
@@ -65,7 +65,7 @@ pihole:
   serviceDhcp:
 
     # -- Generate a Service resource for DHCP traffic
-    enabled: true
+    enabled: false
 
     # -- `spec.type` for the DHCP Service
     type: NodePort
@@ -92,12 +92,12 @@ pihole:
       enabled: true
 
       # -- The port of the web HTTP service
-      port: 80
+      port: 55080
 
     # -- Configuration for the HTTPS web interface listener
     https:
       # -- Generate a service for HTTPS traffic
-      enabled: true
+      enabled: false
 
       # -- The port of the web HTTPS service
       port: 443
@@ -339,27 +339,27 @@ pihole:
   # MAXDBDAYS: 14
 
   # -- port the container should use to expose HTTP traffic
-  webHttp: "80"
+  webHttp: "55080"
 
   # -- port the container should use to expose HTTPS traffic
-  webHttps: "443"
+  webHttps: "55443"
 
   # -- hostname of pod
   hostname: ""
 
   # -- should the container use host network
-  hostNetwork: "false"
+  hostNetwork: "true"
 
   # -- should container run in privileged mode
-  privileged: "false"
+  privileged: "true"
 
   customVolumes:
     # -- set this to true to enable custom volumes
-    enabled: false
+    enabled: true
     # -- any volume type can be used here
-    config: { }
-    # hostPath:
-    #   path: "/mnt/data"
+    config:
+     hostPath:
+       path: /mnt/usbhdd/pihole/config
 
   # -- Additional annotations for pods
   podAnnotations: { }
