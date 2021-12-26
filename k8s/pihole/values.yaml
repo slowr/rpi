@@ -118,7 +118,7 @@ pihole:
     # metallb.universe.tf/address-pool: network-services
     # metallb.universe.tf/allow-shared-ip: pihole-svc
 
-  virtualHost: pi.hole
+  virtualHost: pi.mavrommatis.dev
 
   # -- Configuration for the Ingress
   ingress:
