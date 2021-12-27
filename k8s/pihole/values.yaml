@@ -359,7 +359,8 @@ pihole:
     # -- any volume type can be used here
     config:
      hostPath:
-       path: /mnt/usbhdd/pihole/config
+       # can't mount on NTFS because permissions don't work
+       path: /home/pi/.pihole_config
 
   # -- Additional annotations for pods
   podAnnotations: { }
