@@ -1,0 +1,12 @@
+apiVersion: v2
+name: jackett
+description: Helm chart for jackett
+
+type: application
+
+version: 11.2.0
+
+dependencies:
+  - name: jackett
+    version: "11.2.0"
+    repository: "file://jackett-11.2.0.tgz"
